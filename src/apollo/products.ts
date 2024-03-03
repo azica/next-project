@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client"
 
 const ALL_PRODUCTS = gql`
   query ($limit: Int, $offset: Int, $categoryId: Float, $title: String, $price_min: Int, $price_max: Int) {
@@ -21,7 +21,7 @@ const ALL_PRODUCTS = gql`
       }
     }
   }
-`;
+`
 
 export function useAllProducts({
   limit,
@@ -40,7 +40,7 @@ export function useAllProducts({
 }) {
   return useQuery(ALL_PRODUCTS, {
     variables: { limit, offset, categoryId, price_min, price_max, title },
-  });
+  })
 }
 
 export const GET_ONE_PRODUCT = gql`
@@ -50,10 +50,10 @@ export const GET_ONE_PRODUCT = gql`
       price
     }
   }
-`;
+`
 
 export function useProduct(id: number) {
   return useQuery(GET_ONE_PRODUCT, {
     variables: { id },
-  });
+  })
 }

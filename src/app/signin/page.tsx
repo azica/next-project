@@ -1,8 +1,8 @@
-import AuthContent from "@/components/blocks/AuthContent";
+import AuthContent from "@/components/blocks/AuthContent"
 
 const Auth = (props: any) => {
-  console.log(props);
+  console.log(props)
 
-  return <AuthContent />;
-};
-export default Auth;
+  return <AuthContent />
+}
+export default Auth

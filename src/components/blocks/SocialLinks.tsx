@@ -1,6 +1,6 @@
-import { Tooltip, Typography } from "@material-tailwind/react";
-import { Star, ArrowRightLeft, EyeOpen } from "akar-icons";
-import React from "react";
+import { Tooltip, Typography } from "@material-tailwind/react"
+import { Star, ArrowRightLeft, EyeOpen } from "akar-icons"
+import React from "react"
 
 const SocialLinks = () => {
   return (
@@ -28,7 +28,7 @@ const SocialLinks = () => {
         <EyeOpen strokeWidth={1.5} size={17} />
       </Typography>
     </>
-  );
-};
+  )
+}
 
-export default SocialLinks;
+export default SocialLinks

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 import {
   ListItem,
@@ -6,9 +6,9 @@ import {
   Typography,
   AccordionBody,
   Accordion as MaterialAccordion,
-} from "@material-tailwind/react";
-import { ChevronDownSmall } from "akar-icons";
-import React from "react";
+} from "@material-tailwind/react"
+import { ChevronDownSmall } from "akar-icons"
+import React from "react"
 
 const Accordion = ({
   open,
@@ -38,7 +38,7 @@ const Accordion = ({
       </ListItem>
       <AccordionBody className="py-1">{children}</AccordionBody>
     </MaterialAccordion>
-  );
-};
+  )
+}
 
-export default Accordion;
+export default Accordion

@@ -1,4 +1,4 @@
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client"
 
 type LoginRequest = {
   email: string;
@@ -12,7 +12,7 @@ const LOGIN = gql`
       refresh_token
     }
   }
-`;
+`
 export const useLogin = () => {
-  return useMutation<Response.Tokens, LoginRequest>(LOGIN);
-};
+  return useMutation<Response.Tokens, LoginRequest>(LOGIN)
+}

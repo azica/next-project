@@ -1,4 +1,4 @@
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client"
 
 const CREATE_USER = gql`
   mutation ($name: String!, $email: String!, $password: String!, $avatar: String!) {
@@ -8,11 +8,11 @@ const CREATE_USER = gql`
       avatar
     }
   }
-`;
+`
 
 export const useCreateUser = () => {
-  return useMutation<Model.User, Omit<Model.User, "id">>(CREATE_USER);
-};
+  return useMutation<Model.User, Omit<Model.User, "id">>(CREATE_USER)
+}
 
 const GET_USER = gql`
   query {
@@ -22,8 +22,8 @@ const GET_USER = gql`
       avatar
     }
   }
-`;
+`
 
 export const useGetUser = () => {
-  return useQuery(GET_USER);
-};
+  return useQuery(GET_USER)
+}

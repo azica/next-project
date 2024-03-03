@@ -3,5 +3,5 @@ type Proctcted = {
 };
 
 const Protected = () => {
-  return <div>kkk</div>;
-};
+  return <div>kkk</div>
+}

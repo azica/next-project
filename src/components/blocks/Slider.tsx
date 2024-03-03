@@ -1,26 +1,26 @@
-"use client";
+"use client"
 
-import { Typography } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { Typography } from "@material-tailwind/react"
+import { useEffect, useState } from "react"
 
-import { useAllProducts } from "@/apollo/products";
+import { useAllProducts } from "@/apollo/products"
 
-import ProductCard from "./ProductCard";
-import Container from "../layout/Container";
+import ProductCard from "./ProductCard"
+import Container from "../layout/Container"
 
 const Slider = () => {
-  const [products, setProducts] = useState<Model.Product[]>([]);
+  const [products, setProducts] = useState<Model.Product[]>([])
 
   const { loading, error, data } = useAllProducts({
     limit: 8,
     offset: 1,
-  });
+  })
 
   useEffect(() => {
     if (data) {
-      setProducts(data.products);
+      setProducts(data.products)
     }
-  }, [data]);
+  }, [data])
   // console.log(data);
 
   return (
@@ -46,7 +46,7 @@ const Slider = () => {
         corporis?
       </p>
     </Container>
-  );
-};
+  )
+}
 
-export default Slider;
+export default Slider

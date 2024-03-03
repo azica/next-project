@@ -132,4 +132,4 @@ export const authData: Record<string, any> = {
       },
     ],
   },
-};
+}

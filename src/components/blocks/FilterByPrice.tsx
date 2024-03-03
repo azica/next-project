@@ -1,37 +1,37 @@
-"use client";
-import type { ChangeEvent } from "react";
+"use client"
+import type { ChangeEvent } from "react"
 
-import { Typography } from "@material-tailwind/react";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Typography } from "@material-tailwind/react"
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
-import { useCreateQueryString } from "@/hooks/useCreateQueryString";
+import { useCreateQueryString } from "@/hooks/useCreateQueryString"
 
 const FilterByPrice = ({ min = 0, max = 1000 }) => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const [minValue, setMinValue] = useState(min);
-  const [maxValue, setMaxValue] = useState(max);
-  const { createQueryString, separator } = useCreateQueryString();
-
-  useEffect(() => {
-    minValue && router.push(`${pathname}${separator}${createQueryString("price_min", minValue)}`);
-  }, [minValue]);
+  const [minValue, setMinValue] = useState(min)
+  const [maxValue, setMaxValue] = useState(max)
+  const { createQueryString, separator } = useCreateQueryString()
 
   useEffect(() => {
-    maxValue && router.push(`${pathname}${separator}${createQueryString("price_max", maxValue)}`);
-  }, [maxValue]);
+    minValue && router.push(`${pathname}${separator}${createQueryString("price_min", minValue)}`)
+  }, [minValue])
+
+  useEffect(() => {
+    maxValue && router.push(`${pathname}${separator}${createQueryString("price_max", maxValue)}`)
+  }, [maxValue])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name } = e.target;
-    const value = parseInt(e.target.value);
+    const { name } = e.target
+    const value = parseInt(e.target.value)
     if (name === "minValue") {
-      setMinValue(value);
+      setMinValue(value)
     } else if (name === "maxValue") {
-      setMaxValue(value);
+      setMaxValue(value)
     }
-  };
+  }
 
   return (
     <div className="my-10">
@@ -61,7 +61,7 @@ const FilterByPrice = ({ min = 0, max = 1000 }) => {
         <div className="absolute bg-gray-500 w-full z-10 rounded h-1" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FilterByPrice;
+export default FilterByPrice

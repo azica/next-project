@@ -1,5 +1,5 @@
-import Hero from "@/components/blocks/Hero";
-import Slider from "@/components/blocks/Slider";
+import Hero from "@/components/blocks/Hero"
+import Slider from "@/components/blocks/Slider"
 
 const Home = () => {
   return (
@@ -7,6 +7,6 @@ const Home = () => {
       <Hero />
       <Slider />
     </main>
-  );
-};
-export default Home;
+  )
+}
+export default Home

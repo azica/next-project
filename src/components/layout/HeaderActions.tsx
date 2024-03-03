@@ -1,37 +1,37 @@
-"use client";
-import { Button, IconButton } from "@material-tailwind/react";
-import { Cart, Heart, Search } from "akar-icons";
-import { signOut, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+"use client"
+import { Button, IconButton } from "@material-tailwind/react"
+import { Cart, Heart, Search } from "akar-icons"
+import { signOut, useSession } from "next-auth/react"
+import { useEffect, useState } from "react"
 
-import CartDrawer from "@/components/blocks/Cart";
+import CartDrawer from "@/components/blocks/Cart"
 
 const HeaderActions = () => {
-  const session = useSession();
-  const [showCart, setShowCart] = useState(false);
-  const [showSearchBar, setShowSearchBar] = useState(false);
-  const [productQuantity, setProductQuantity] = useState(0);
+  const session = useSession()
+  const [showCart, setShowCart] = useState(false)
+  const [showSearchBar, setShowSearchBar] = useState(false)
+  const [productQuantity, setProductQuantity] = useState(0)
 
   useEffect(() => {
-    const cartList = localStorage.getItem("cartList");
+    const cartList = localStorage.getItem("cartList")
     if (cartList) {
-      const parsedCartList: Model.Product & { quantity: number }[] = JSON.parse(cartList);
-      const totalQuantity = parsedCartList.reduce((acc, el) => acc + el.quantity, 0);
-      setProductQuantity(totalQuantity);
+      const parsedCartList: Model.Product & { quantity: number }[] = JSON.parse(cartList)
+      const totalQuantity = parsedCartList.reduce((acc, el) => acc + el.quantity, 0)
+      setProductQuantity(totalQuantity)
     }
-  }, []);
+  }, [])
 
   const searchHandle = () => {
-    setShowSearchBar(!showSearchBar);
-  };
+    setShowSearchBar(!showSearchBar)
+  }
 
   const wishlistHandle = () => {
-    alert("Wishlist clicked");
-  };
+    alert("Wishlist clicked")
+  }
 
   const toggleDrawer = () => {
-    setShowCart(!showCart);
-  };
+    setShowCart(!showCart)
+  }
 
   const actions = [
     {
@@ -53,7 +53,7 @@ const HeaderActions = () => {
       ),
       handle: () => toggleDrawer(),
     },
-  ];
+  ]
 
   return (
     <div className="flex gap-3">
@@ -72,5 +72,5 @@ const HeaderActions = () => {
       )}
     </div>
   )
-};
-export default HeaderActions;
+}
+export default HeaderActions

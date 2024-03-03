@@ -1,23 +1,23 @@
-"use client";
-import { Drawer, Typography, List, ListItem, IconButton, Button, ListItemSuffix } from "@material-tailwind/react";
-import { TrashCan } from "akar-icons";
-import { Fragment, useEffect, useState } from "react";
+"use client"
+import { Drawer, Typography, List, ListItem, IconButton, Button, ListItemSuffix } from "@material-tailwind/react"
+import { TrashCan } from "akar-icons"
+import { Fragment, useEffect, useState } from "react"
 
 const Cart = ({ open, toggleDrawer }: { open: boolean; toggleDrawer: () => void }) => {
-  const [subtotal, setSubtotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(0)
   const [cartList, setCartList] = useState<({ quantity: number } & Model.Product)[]>(
     JSON.parse(localStorage.getItem("cartList") || "[]"),
-  );
+  )
 
   const deleteFromCartHandle = (id: number) => {
-    const updatedCartList = cartList.filter((item) => item.id !== id);
-    setCartList(updatedCartList);
-    localStorage.setItem("cartList", JSON.stringify(updatedCartList));
-  };
+    const updatedCartList = cartList.filter((item) => item.id !== id)
+    setCartList(updatedCartList)
+    localStorage.setItem("cartList", JSON.stringify(updatedCartList))
+  }
 
   useEffect(() => {
-    setSubtotal(cartList.reduce((acc, item) => acc + item.price * item.quantity, 0));
-  }, [cartList]);
+    setSubtotal(cartList.reduce((acc, item) => acc + item.price * item.quantity, 0))
+  }, [cartList])
 
   return (
     <Drawer open={open} onClose={toggleDrawer} placement="right">
@@ -76,7 +76,7 @@ const Cart = ({ open, toggleDrawer }: { open: boolean; toggleDrawer: () => void 
         </a>
       </div>
     </Drawer>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

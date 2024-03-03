@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client"
 
 const ALL_CATEGORIES = gql`
   query {
@@ -7,8 +7,8 @@ const ALL_CATEGORIES = gql`
       name
     }
   }
-`;
+`
 
 export const useCategories = () => {
-  return useQuery(ALL_CATEGORIES);
-};
+  return useQuery(ALL_CATEGORIES)
+}

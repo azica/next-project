@@ -1,7 +1,7 @@
-import { createTheme } from "@mui/material";
-import { red, gray1, green, white, background, black, gray2, primary } from "styles/colors";
-import { PoppinsRegular, PoppinsMedium } from "styles/fonts";
-import { rgba } from "styles/mixins";
+import { createTheme } from "@mui/material"
+import { red, gray1, green, white, background, black, gray2, primary } from "styles/colors"
+import { PoppinsRegular, PoppinsMedium } from "styles/fonts"
+import { rgba } from "styles/mixins"
 
 export const theme = createTheme({
   palette: {
@@ -430,4 +430,4 @@ export const theme = createTheme({
       },
     },
   },
-});
+})

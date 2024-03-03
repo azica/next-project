@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
-import { ApolloProvider } from "@apollo/client";
-import { ThemeProvider } from "@material-tailwind/react";
-import { SessionProvider } from "next-auth/react";
+import { ApolloProvider } from "@apollo/client"
+import { ThemeProvider } from "@material-tailwind/react"
+import { SessionProvider } from "next-auth/react"
 
-import client from "@/apollo/client";
-import { customTheme } from "@/styles/global";
+import client from "@/apollo/client"
+import { customTheme } from "@/styles/global"
 
 type Props = {
   children: ReactNode;
@@ -21,5 +21,5 @@ const Providers: React.FC<Props> = ({ children }) => {
       </SessionProvider>
     </ApolloProvider>
   )
-};
-export default Providers;
+}
+export default Providers

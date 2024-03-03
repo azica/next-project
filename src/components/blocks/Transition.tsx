@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 const Transition = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +10,7 @@ const Transition = ({ children }: { children: React.ReactNode }) => {
       transition={{ ease: "easeInOut", duration: 0.75 }}>
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
-export default Transition;
+export default Transition

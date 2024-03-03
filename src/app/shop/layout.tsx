@@ -1,11 +1,11 @@
-import { Suspense } from "react";
+import { Suspense } from "react"
 
-import Filters from "@/components/blocks/Filters";
-import Pagination from "@/components/blocks/Pagination";
-import Sort from "@/components/blocks/Sort";
-import Container from "@/components/layout/Container";
+import Filters from "@/components/blocks/Filters"
+import Pagination from "@/components/blocks/Pagination"
+import Sort from "@/components/blocks/Sort"
+import Container from "@/components/layout/Container"
 
-import Loading from "./loading";
+import Loading from "./loading"
 
 const ShopLayout = ({
   children,
@@ -27,4 +27,4 @@ const ShopLayout = ({
     </Container>
   )
   }
-export default ShopLayout;
+export default ShopLayout

@@ -1,22 +1,22 @@
-"use client";
-import type { ChangeEvent } from "react";
+"use client"
+import type { ChangeEvent } from "react"
 
-import { List, ListItem, ListItemPrefix, Checkbox, Typography } from "@material-tailwind/react";
-import { usePathname, useRouter } from "next/navigation";
+import { List, ListItem, ListItemPrefix, Checkbox, Typography } from "@material-tailwind/react"
+import { usePathname, useRouter } from "next/navigation"
 
-import { useCategories } from "@/apollo/categories";
+import { useCategories } from "@/apollo/categories"
 
-import { useCreateQueryString } from "../../hooks/useCreateQueryString";
+import { useCreateQueryString } from "../../hooks/useCreateQueryString"
 
 const FilterByCategories = () => {
-  const { data } = useCategories();
-  const router = useRouter();
-  const pathname = usePathname();
-  const { createQueryString, separator } = useCreateQueryString();
+  const { data } = useCategories()
+  const router = useRouter()
+  const pathname = usePathname()
+  const { createQueryString, separator } = useCreateQueryString()
 
   const changeHandle = (e: ChangeEvent<HTMLInputElement>) => {
-    router.push(`${pathname}${separator}${createQueryString("categoryId", e.target.value)}`);
-  };
+    router.push(`${pathname}${separator}${createQueryString("categoryId", e.target.value)}`)
+  }
 
   return (
     <List className="p-0">
@@ -40,7 +40,7 @@ const FilterByCategories = () => {
         </ListItem>
       ))}
     </List>
-  );
-};
+  )
+}
 
-export default FilterByCategories;
+export default FilterByCategories

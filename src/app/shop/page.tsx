@@ -1,6 +1,6 @@
-import ProductList from "@/components/blocks/ProductList";
+import ProductList from "@/components/blocks/ProductList"
 
 const Shop = () => {
-  return <ProductList />;
-};
-export default Shop;
+  return <ProductList />
+}
+export default Shop

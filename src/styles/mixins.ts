@@ -1,6 +1,6 @@
 export const rgba = (color: string, opacity?: number) => {
-  const opacityValue = opacity !== undefined ? opacity : 1;
-  const colorValue = color.split("(").pop()?.split(")")?.shift();
+  const opacityValue = opacity !== undefined ? opacity : 1
+  const colorValue = color.split("(").pop()?.split(")")?.shift()
 
-  return `rgba(${colorValue}, ${opacityValue})`;
-};
+  return `rgba(${colorValue}, ${opacityValue})`
+}

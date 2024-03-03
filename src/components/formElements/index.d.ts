@@ -1,4 +1,4 @@
-import type { ReactNode, FC, SyntheticEvent } from "react";
+import type { ReactNode, FC, SyntheticEvent } from "react"
 declare global {
   type ButtonPreloader = {
     loading: boolean;

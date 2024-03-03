@@ -1,8 +1,8 @@
-import { getServerSession } from "next-auth";
-import { authConfig } from "@/configs/auth.config";
-import Image from "next/image";
+import { getServerSession } from "next-auth"
+import { authConfig } from "@/configs/auth.config"
+import Image from "next/image"
 const Profile = async () => {
-  const session = await getServerSession(authConfig);
+  const session = await getServerSession(authConfig)
 
   return (
     <div>
@@ -10,6 +10,6 @@ const Profile = async () => {
       {session?.user?.image && <img src={session.user.image} alt={session.user.name!} width={200} height={400} />}
     </div>
   )
-};
+}
 
-export default Profile;
+export default Profile

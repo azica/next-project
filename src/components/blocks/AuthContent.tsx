@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { Button, Card, Typography } from "@material-tailwind/react";
-import { ChevronLeft } from "akar-icons";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { Button, Card, Typography } from "@material-tailwind/react"
+import { ChevronLeft } from "akar-icons"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { useState, useEffect } from "react"
 
-import register from "@/assets/images/auth.png";
-import logo from "@/assets/images/Logo.png";
-import AuthForm from "@/components/blocks/AuthForm";
-import { authData } from "@/shared/mockdata/mockdata";
+import register from "@/assets/images/auth.png"
+import logo from "@/assets/images/Logo.png"
+import AuthForm from "@/components/blocks/AuthForm"
+import { authData } from "@/shared/mockdata/mockdata"
 
 type AuthFormData = {
   title: string;
@@ -20,22 +20,22 @@ type AuthFormData = {
 };
 
 const AuthContent = () => {
-  const [hasAccount, setHasAccount] = useState(false);
-  const [forgetPassword, setForgetPassword] = useState(false);
+  const [hasAccount, setHasAccount] = useState(false)
+  const [forgetPassword, setForgetPassword] = useState(false)
   const [authForm, setAuthForm] = useState<AuthFormData>({
     title: "",
     subtitle: "",
     buttonText: "",
     inputs: [],
-  });
+  })
 
   useEffect(() => {
     if (forgetPassword) {
-      setAuthForm(authData.forgetPassword);
+      setAuthForm(authData.forgetPassword)
     } else {
-      setAuthForm(hasAccount ? authData.login : authData.register);
+      setAuthForm(hasAccount ? authData.login : authData.register)
     }
-  }, [hasAccount, forgetPassword]);
+  }, [hasAccount, forgetPassword])
 
   return (
     <div className="relative h-lvh flex items-stretch">
@@ -81,7 +81,7 @@ const AuthContent = () => {
         </Card>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AuthContent;
+export default AuthContent

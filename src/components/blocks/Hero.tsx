@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { Button, Typography } from "@material-tailwind/react";
-import Image from "next/image";
+import { Button, Typography } from "@material-tailwind/react"
+import Image from "next/image"
 
-import homeHero from "@/assets/images/homeHero.png";
+import homeHero from "@/assets/images/homeHero.png"
 
-import Container from "../layout/Container";
+import Container from "../layout/Container"
 
 const Hero = () => {
   return (
@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

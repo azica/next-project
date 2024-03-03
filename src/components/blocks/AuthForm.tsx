@@ -1,13 +1,13 @@
-"use client";
-import type { FC } from "react";
-import { Input, Checkbox, Button, Typography, Spinner } from "@material-tailwind/react";
-import { EyeSlashed, EyeOpen } from "akar-icons";
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+"use client"
+import type { FC } from "react"
+import { Input, Checkbox, Button, Typography, Spinner } from "@material-tailwind/react"
+import { EyeSlashed, EyeOpen } from "akar-icons"
+import React, { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
 import { signIn } from "next-auth/react"
-import { useLogin } from "@/apollo/auth";
-import { useCreateUser } from "@/apollo/user";
-import { GoogleButton } from "./GoogleButton";
+import { useLogin } from "@/apollo/auth"
+import { useCreateUser } from "@/apollo/user"
+import { GoogleButton } from "./GoogleButton"
 
 type FormValues = {
   email: string;
@@ -24,41 +24,41 @@ type AuthForm = {
   forgetPassword: boolean;
 };
 const AuthForm: FC<AuthForm> = ({ hasAccount, setHasAccount, inputs, buttonText, setForgetPassword, forgetPassword }) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [createUser, createdUser] = useCreateUser();
-  const [login, loggedUser] = useLogin();
+  const [showPassword, setShowPassword] = useState(false)
+  const [createUser, createdUser] = useCreateUser()
+  const [login, loggedUser] = useLogin()
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>()
 
   useEffect(() => {
     if (createdUser.data) {
-      console.log(createdUser);
+      console.log(createdUser)
     }
-  }, [createdUser]);
+  }, [createdUser])
 
   useEffect(() => {
     const handleLogin = async () => {
       if (loggedUser.data) {
         console.log(loggedUser.data)
-        const tokens: Response.Tokens = loggedUser.data;
-        await signIn('jwt', { token: tokens });
+        const tokens: Response.Tokens = loggedUser.data
+        await signIn("jwt", { token: tokens })
       }
-    };
+    }
 
-    handleLogin();
-  }, [loggedUser]);
+    handleLogin()
+  }, [loggedUser])
 
   const toggleIcon = () => {
     return showPassword ? (
       <EyeSlashed strokeWidth={1.5} size={20} onClick={() => setShowPassword(false)} className="cursor-pointer" />
     ) : (
       <EyeOpen strokeWidth={1.5} size={20} onClick={() => setShowPassword(true)} className="cursor-pointer" />
-    );
-  };
+    )
+  }
 
   const onSubmit = async (data: FormValues) => {
     hasAccount
@@ -70,8 +70,8 @@ const AuthForm: FC<AuthForm> = ({ hasAccount, setHasAccount, inputs, buttonText,
             ...data,
             avatar: "https://api.lorem.space/image/face?w=150&h=220",
           },
-        });
-  };
+        })
+  }
 
   return (
     <form className="mt-8 mb-2" onSubmit={handleSubmit(onSubmit)}>
@@ -136,7 +136,7 @@ const AuthForm: FC<AuthForm> = ({ hasAccount, setHasAccount, inputs, buttonText,
         </a>
       </Typography>
     </form>
-  );
-};
+  )
+}
 
-export default AuthForm;
+export default AuthForm

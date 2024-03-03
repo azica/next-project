@@ -1,7 +1,7 @@
-import type { MouseEvent } from "react";
+import type { MouseEvent } from "react"
 
-import { Input } from "@material-tailwind/react";
-import { EyeSlashed, EyeOpen } from "akar-icons";
+import { Input } from "@material-tailwind/react"
+import { EyeSlashed, EyeOpen } from "akar-icons"
 
 interface InputAdornmentProps {
   show: boolean;
@@ -9,10 +9,10 @@ interface InputAdornmentProps {
 }
 
 const InputAdornment = ({ show, onChange }: InputAdornmentProps) => {
-  const handleClickShowPassword = () => onChange(!show);
+  const handleClickShowPassword = () => onChange(!show)
   const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
   return (
     <div className="w-72">
@@ -22,7 +22,7 @@ const InputAdornment = ({ show, onChange }: InputAdornmentProps) => {
         icon={show ? <EyeSlashed strokeWidth={1.5} size={20} /> : <EyeOpen strokeWidth={1.5} size={20} />}
       />
     </div>
-  );
-};
+  )
+}
 
-export default InputAdornment;
+export default InputAdornment

@@ -1,6 +1,6 @@
-import type { AuthOptions, User } from "next-auth";
+import type { AuthOptions, User } from "next-auth"
 
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider from "next-auth/providers/google"
 import Credentials from "next-auth/providers/credentials"
 
 export const authConfig: AuthOptions = {
@@ -11,15 +11,15 @@ export const authConfig: AuthOptions = {
     }),
   ],
   pages: {
-    signIn: '/signin'
+    signIn: "/signin"
   },
   callbacks: {
     async jwt({ token, account }) {
-      return {...token, account};
+      return { ...token, account }
     },
-    async session({session, token, user}) {
-      session.user = token as Response.Tokens;
+    async session({ session, token, user }) {
+      session.user = token as Response.Tokens
       return session
     }
   }
-};
+}

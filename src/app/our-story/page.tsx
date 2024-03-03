@@ -1,3 +1,3 @@
 export default function OurStory() {
-  return <h1>our story</h1>;
+  return <h1>our story</h1>
 }

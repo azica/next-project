@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { Typography } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { Typography } from "@material-tailwind/react"
+import { useEffect, useState } from "react"
 
-import InputAdornment from "./InputAdorment";
+import InputAdornment from "./InputAdorment"
 
 const Input = ({
   value,
@@ -28,60 +28,60 @@ const Input = ({
   autoComplete,
   textarea,
 }: Input) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [isInvalid, setIsInvalid] = useState(invalid ? invalid : false);
-  const [errorMessage, setErrorMessage] = useState(helperText ? helperText : "");
-  const idForHelperText = `helper-text-${field}`;
-  const idForInput = `${field}-${id}`;
-  const inputType = type === "password" ? (showPassword ? "text" : "password") : type;
+  const [showPassword, setShowPassword] = useState(false)
+  const [isInvalid, setIsInvalid] = useState(invalid ? invalid : false)
+  const [errorMessage, setErrorMessage] = useState(helperText ? helperText : "")
+  const idForHelperText = `helper-text-${field}`
+  const idForInput = `${field}-${id}`
+  const inputType = type === "password" ? (showPassword ? "text" : "password") : type
   const adornment = endAdornment ? (
     endAdornment
   ) : type === "password" ? (
     <InputAdornment show={showPassword} onChange={setShowPassword} />
-  ) : null;
+  ) : null
 
   useEffect(() => {
     if (invalid !== isInvalid && invalid !== undefined) {
-      setIsInvalid(invalid);
+      setIsInvalid(invalid)
     }
-  }, [invalid]);
+  }, [invalid])
 
   useEffect(() => {
     if (helperText && helperText !== errorMessage) {
-      setErrorMessage(helperText);
+      setErrorMessage(helperText)
     }
-  }, [helperText]);
+  }, [helperText])
 
   useEffect(() => {
-    checkValidityOfLength(`${value}`);
-  }, [value]);
+    checkValidityOfLength(`${value}`)
+  }, [value])
 
   const checkValidityOfLength = (value: string) => {
-    const valueLength = value.length;
+    const valueLength = value.length
     if (valueLength > 0 && (minLength || maxLength)) {
-      let message = "Вводимое значение не должно быть";
+      let message = "Вводимое значение не должно быть"
 
       if (minLength) {
-        message = `${message} меньше ${minLength}`;
+        message = `${message} меньше ${minLength}`
       }
       if (maxLength) {
-        message = `${message} больше ${maxLength}`;
+        message = `${message} больше ${maxLength}`
       }
 
-      setErrorMessage(message);
+      setErrorMessage(message)
 
       if ((maxLength && valueLength > maxLength) || (minLength && valueLength < minLength)) {
-        if (valueLength > 0) setIsInvalid(true);
+        if (valueLength > 0) setIsInvalid(true)
       } else {
-        setIsInvalid(false);
+        setIsInvalid(false)
       }
     }
-  };
+  }
 
   const changeValue = (event: { target: { name: string; value: string; id: string | number } }) => {
-    const { name, value, id } = event.target;
-    onChange({ field: name, value, id });
-  };
+    const { name, value, id } = event.target
+    onChange({ field: name, value, id })
+  }
 
   const commonInputProps = {
     id: idForInput,
@@ -101,7 +101,7 @@ const Input = ({
     onKeyDown,
     autoComplete,
     ...textarea,
-  };
+  }
   return (
     <div>
       {/* <Typography variant="h6" color="blue-gray" className="-mb-3">
@@ -123,7 +123,7 @@ const Input = ({
          {errorMessage}
       </Typography> */}
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
