@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
 
-const roboto = Roboto({ 
-  weight:['400', '700'],
-  subsets: ["latin"], 
-  display: "swap" });
+import { Jost } from "next/font/google";
+
+import "./globals.css";
+import Transition from "@/components/blocks/Transition";
+import Header from "@/components/layout/Header";
+import Providers from "@/components/layout/Providers";
+
+const jost = Jost({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,12 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <Header/>
-        <main>
-          {children}
+      <body className={jost.className}>
+        <Providers>
+          <Header />
+          <main>
+            <Transition>{children}</Transition>
           </main>
+        </Providers>
       </body>
     </html>
-  );
+  )
 }

@@ -1,4 +1,6 @@
+import ProductList from "@/components/blocks/ProductList";
 
-export default function Shop() {
- return <h1>Shop</h1>
-}
+const Shop = () => {
+  return <ProductList />;
+};
+export default Shop;
