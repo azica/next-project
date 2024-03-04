@@ -6,6 +6,24 @@ const Home = () => {
     <main className="">
       <Hero />
       <Slider />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </main>
   )
 }
