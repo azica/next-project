@@ -1,5 +1,4 @@
 import type { ReactNode } from "react"
-
 import {
   ListItem,
   AccordionHeader,
@@ -36,7 +35,9 @@ const Accordion = ({
           <Typography className="mr-auto font-semibold">{title}</Typography>
         </AccordionHeader>
       </ListItem>
-      <AccordionBody className="py-1">{children}</AccordionBody>
+      <AccordionBody className="py-1">
+        {children}
+      </AccordionBody>
     </MaterialAccordion>
   )
 }

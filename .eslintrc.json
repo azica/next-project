@@ -53,13 +53,13 @@
                         "ignoreRestSiblings": false
                     }
                 ],
-                "@typescript-eslint/explicit-function-return-type": [
-                    "warn",
-                    {
-                        "allowExpressions": true,
-                        "allowConciseArrowFunctionExpressionsStartingWithVoid": true
-                    }
-                ],
+                // "@typescript-eslint/explicit-function-return-type": [
+                //     "warn",
+                //     {
+                //         "allowExpressions": true,
+                //         "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+                //     }
+                // ],
                 "@typescript-eslint/ban-ts-comment": "warn",
                 "@typescript-eslint/no-explicit-any": [
                     "off"

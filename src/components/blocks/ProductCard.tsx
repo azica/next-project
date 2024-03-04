@@ -1,6 +1,5 @@
 "use client"
 import { Button, Card, CardBody, Typography } from "@material-tailwind/react"
-import Image from "next/image"
 import React from "react"
 
 import SocialLinks from "./SocialLinks"
@@ -15,13 +14,16 @@ const ProductCard = ({
   className,
 }: Model.Product & { className?: string }) => {
   const addToCartHandle = (id: number) => {
+
     const cartList: ({ quantity: number } & Model.Product)[] = JSON.parse(localStorage.getItem("cartList") || "[]")
     const existingProductIndex = cartList.findIndex((el) => el.id === id)
+
     if (existingProductIndex !== -1) {
       cartList[existingProductIndex].quantity += 1
     } else {
       cartList.push({ title, price, images, description, category, id, quantity: 1 })
     }
+
     localStorage.setItem("cartList", JSON.stringify(cartList))
   }
 

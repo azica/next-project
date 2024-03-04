@@ -1,6 +1,5 @@
 import { getServerSession } from "next-auth"
 import { authConfig } from "@/configs/auth.config"
-import Image from "next/image"
 const Profile = async () => {
   const session = await getServerSession(authConfig)
 

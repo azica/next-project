@@ -1,8 +1,6 @@
 import AuthContent from "@/components/blocks/AuthContent"
 
-const Auth = (props: any) => {
-  console.log(props)
-
+const Auth = () => {
   return <AuthContent />
 }
 export default Auth

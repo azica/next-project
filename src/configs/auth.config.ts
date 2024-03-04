@@ -18,7 +18,7 @@ export const authConfig: AuthOptions = {
       return { ...token, account }
     },
     async session({ session, token, user }) {
-      session.user = token as Response.Tokens
+      session.user = token as Response.Tokens & Model.User;
       return session
     }
   }
