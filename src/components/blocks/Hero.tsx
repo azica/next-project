@@ -16,7 +16,7 @@ const Hero = () => {
             Classic Exclusive
           </Typography>
           <Typography variant="h1" className="mb-3">
-            Women's Collection
+            Women&apos;s Collection
           </Typography>
           <Typography variant="h3" className="uppercase font-normal mb-3">
             upTo 40% off

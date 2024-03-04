@@ -20,17 +20,20 @@ const Filters = () => {
       <List>
         <Accordion
           title="Product Categories"
-          children={<FilterByCategories />}
           handleOpen={() => handleOpen(1)}
           open={open === 1}
-        />
+        >
+          <FilterByCategories />
+        </Accordion>
         <hr className="my-2 border-blue-gray-50" />
         <Accordion
           title="Filter By Price"
-          children={<FilterByPrice />}
           handleOpen={() => handleOpen(2)}
           open={open === 2}
-        />
+        >
+          <FilterByPrice />
+        </Accordion>
+
         <hr className="my-2 border-blue-gray-50" />
       </List>
     </Card>

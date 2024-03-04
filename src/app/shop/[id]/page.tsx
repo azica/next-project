@@ -1,4 +1,4 @@
 const ProductDetail = () => {
-  return <h1></h1>
+  return <h1>Product Detail</h1>
 }
 export default ProductDetail
