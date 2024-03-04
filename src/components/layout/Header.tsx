@@ -10,9 +10,14 @@ import Container from "./Container"
 import HeaderActions from "./HeaderActions"
 
 const Header = () => {
-  const session = useSession()
+  const { data: session, status } = useSession()
   const pathname = usePathname()
   const showHeader = pathname === "/signin"
+  console.log(session)
+  if (status === "authenticated") {
+    console.log(session.user.email)
+  }
+
   if (showHeader) {
     return null
   }
